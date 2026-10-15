@@ -81,6 +81,12 @@ h2 { font-weight: 800; font-size: clamp(28px, 4vw, 40px); letter-spacing: -1.2px
 .note b { color: #93370d; }
 kbd { background: #fff; border: 1px solid #d0d5dd; border-bottom-width: 2px; border-radius: 6px; padding: 1px 7px; font: 600 13px "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, "Malgun Gothic", "Apple SD Gothic Neo", sans-serif; color: #344054; }
 
+.ss { max-width: 760px; margin: 18px auto 0; display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+.ss figure { margin: 0; }
+.ss img { width: 100%; border-radius: 12px; box-shadow: 0 12px 30px rgba(16,24,40,.16), 0 0 0 1px rgba(16,24,40,.06); }
+.ss figcaption { margin-top: 10px; color: var(--sub); font-size: 15px; text-align: center; }
+.ss figcaption b { display: inline-grid; place-items: center; width: 24px; height: 24px; border-radius: 50%; background: #ff3b30; color: #fff; font-size: 13px; margin-right: 6px; }
+@media (max-width: 720px) { .ss { grid-template-columns: 1fr; } }
 /* 후원 */
 .donate { display: flex; gap: 40px; align-items: center; justify-content: center; flex-wrap: wrap; }
 .qr { background: #fff; border: 1px solid var(--line); border-radius: 18px; padding: 16px; }
@@ -194,9 +200,13 @@ footer a { color: var(--sub); }
       <li><b>「다음」만 누르면 설치가 끝납니다.</b><span>새 버전이 나오면 새 설치 파일을 그냥 실행하세요. 지우지 않아도 업데이트됩니다.</span></li>
     </ol>
     <div class="note">
-      <b>「Windows의 PC 보호」 창이 뜨면?</b><br>
-      개인 개발자가 만든 새 프로그램이라 Windows가 처음 한 번 확인하는 창입니다.
-      창 안의 <kbd>추가 정보</kbd>를 누른 뒤 아래에 생기는 <kbd>실행</kbd>을 누르면 설치가 이어집니다.
+      <b>설치할 때 파란 「Windows의 PC 보호」 창이 떠도 안심하세요.</b><br>
+      개인 개발자가 만든 새 프로그램이라 Windows가 처음 한 번 확인하는 창입니다. 바이러스라는 뜻이 아닙니다.
+      아래처럼 두 번만 누르면 설치가 이어집니다.
+    </div>
+    <div class="ss">
+      <figure><img src="img/smartscreen-1.png" alt="Windows의 PC 보호 창에서 추가 정보 누르기" loading="lazy"><figcaption><b>1</b> 창 안의 <kbd>추가 정보</kbd>를 누릅니다.</figcaption></figure>
+      <figure><img src="img/smartscreen-2.png" alt="실행 단추 누르기" loading="lazy"><figcaption><b>2</b> 아래에 생긴 <kbd>실행</kbd>을 누릅니다.</figcaption></figure>
     </div>
   </div>
 </section>
