@@ -267,6 +267,17 @@ footer a { color: var(--sub); }
 </footer>
 
 <script>
+// 메뉴를 눌러도 주소창에 #features 같은 꼬리가 붙지 않게: 주소는 그대로 두고 그 자리로만 부드럽게 내려간다
+document.querySelectorAll('a[href^="#"]').forEach(a => a.addEventListener('click', e => {
+  const id = a.getAttribute('href').slice(1);
+  const target = id ? document.getElementById(id) : null;
+  e.preventDefault();
+  if (target) target.scrollIntoView({ behavior: 'smooth' });
+  else window.scrollTo({ top: 0, behavior: 'smooth' });
+}));
+// 예전에 받아 둔 #주소로 들어와도 꼬리는 지운다(위치는 그대로)
+if (location.hash) history.replaceState(null, '', location.pathname + location.search);
+
 // 최신 버전 번호와 크기를 GitHub에서 읽어 다운로드 단추 아래에 보여 준다(못 읽으면 기본 문구 그대로)
 fetch('https://api.github.com/repos/JungMan79/jungman79.github.io/releases/latest')
   .then(r => r.ok ? r.json() : null)
