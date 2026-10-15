@@ -95,6 +95,12 @@ details { background: #fff; border: 1px solid var(--line); border-radius: 14px; 
 summary { cursor: pointer; font-weight: 700; font-size: 17px; }
 details p { color: var(--sub); margin: 10px 0 2px; }
 
+/* 휴대폰에서만: PC용 안내, 카카오페이 바로 열기 단추 */
+.mobile-only { display: none; }
+.pc-note { color: #b54708; background: #fffaeb; border: 1px solid #fedf89; border-radius: 10px; padding: 8px 12px; font-size: 14px; }
+.kakao-btn { display: inline-flex; align-items: center; gap: 8px; background: #fee500; color: #191919; font-weight: 800; border-radius: 12px; padding: 12px 20px; margin-top: 6px; }
+@media (max-width: 720px) { .mobile-only { display: block; } .kakao-btn.mobile-only { display: inline-flex; } }
+
 footer { border-top: 1px solid var(--line); padding: 36px 0; color: var(--muted); font-size: 14px; text-align: center; }
 footer a { color: var(--sub); }
 </style>
@@ -125,6 +131,7 @@ footer a { color: var(--sub); }
         무료 다운로드
       </a>
       <span class="meta" id="ver">Windows 10 · 11 (64비트) · 약 50MB</span>
+      <span class="pc-note mobile-only">Windows PC용 프로그램입니다. PC에서 이 주소로 들어와 받아 주세요.</span>
     </div>
     <img class="shot-main" src="img/overview.png" alt="JUNG'S PDF 화면">
   </div>
@@ -201,6 +208,7 @@ footer a { color: var(--sub); }
         <h3>♥ 개발자 후원하기</h3>
         <p>JUNG'S PDF는 무료입니다. 쓰시면서 도움이 되셨다면 커피 한 잔으로 응원해 주세요.</p>
         <p>휴대폰 카메라나 카카오톡 코드스캔으로 QR을 찍으면 카카오페이로 보낼 수 있습니다.</p>
+        <a class="kakao-btn mobile-only" href="https://qr.kakaopay.com/281006011140714921004368">카카오페이로 후원하기</a>
         <p style="color: var(--muted); font-size: 14px;">후원하지 않아도 모든 기능을 그대로 쓰실 수 있습니다.</p>
       </div>
     </div>
