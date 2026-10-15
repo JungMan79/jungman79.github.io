@@ -28,7 +28,8 @@ header .wrap { display: flex; align-items: center; height: 64px; gap: 28px; }
 .logo { display: flex; align-items: center; gap: 10px; color: var(--ink); font-weight: 800; font-size: 19px; letter-spacing: -.3px; line-height: 1; }
 .logo .name { white-space: nowrap; }
 .logo img { width: 32px; height: 32px; }
-.logo span { color: var(--brand); }
+.logo .name { color: var(--ink); }
+.logo .name > span { color: var(--brand); }
 nav { display: flex; align-items: center; gap: 26px; margin-left: auto; height: 100%; }
 nav a { display: inline-flex; align-items: center; height: 36px; line-height: 1; color: var(--sub); font-size: 15px; font-weight: 600; }
 nav a:hover { color: var(--brand); }
